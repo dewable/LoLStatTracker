@@ -1,0 +1,19 @@
+#root, html {
+    background:rgba(206, 114, 255, 0.971);
+
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 10vw 1vw 30vw;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    padding: 0vw 15vw 0vw;
+    align-items: center;
+}
+
+.landing-page > #landing-page-content > button {
+    border: solid black
+}
