@@ -1,21 +1,24 @@
-import SummonerView from "./components/SummonerView"
 import { Routes, Route } from 'react-router-dom'
-import LandingPage from "./pages/LandingPage"
+import { useState } from 'react'
+import Landing from "./pages/Landing"
+import Home from './pages/Home'
 import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SummonerContext from './SummonerContext'
 
 
-function App() {
-  const summoner = {
-    name: 'Dewable',
-    summonerLevel: -1000
-  }
+const App = () => {
+
+  const [summoner, setSummoner] = useState({name: '', summonerLevel: ''})
 
   return (
     <div className="App">
-      <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-      </Routes>
+      <SummonerContext.Provider value={{summoner, setSummoner}}>
+        <Routes>
+          <Route exact path='/' element={<Landing />} />
+          <Route exact path='/home' element={<Home />} />
+        </Routes>
+      </SummonerContext.Provider>
     </div>
   )
 }

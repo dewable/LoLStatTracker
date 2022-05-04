@@ -1,6 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import SummonerContext from '../SummonerContext'
 
-const SummonerView = ({ summoner }) => {
+const MatchView = () => {
+
+    const { summoner } = useContext(SummonerContext)
 
     const [lastMatchPlayers, setLastMatchPlayers] = useState([])
 
@@ -22,10 +25,7 @@ const SummonerView = ({ summoner }) => {
     }
 
     return (
-        <div className='center'>
-            <h2>{summoner.name}</h2>
-            <h3>LVL: {summoner.summonerLevel}</h3>
-
+        <div className='match-view'>
             <button onClick={() => getLastMatchInfo()}>Get last match data</button>
             <button onClick={() => console.log('button not implemented')}>other button</button>
             
@@ -41,4 +41,4 @@ const SummonerView = ({ summoner }) => {
     )
 }
 
-export default SummonerView
+export default MatchView
