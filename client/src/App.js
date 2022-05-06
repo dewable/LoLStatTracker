@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import './css/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SummonerContext from './SummonerContext'
-
+import Nav from './components/Nav'
 
 const App = () => {
 
@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <SummonerContext.Provider value={{summoner, setSummoner}}>
+        <Nav />
         <Routes>
           <Route exact path='/' element={<Landing />} />
           <Route exact path='/home' element={<Home />} />

@@ -5,15 +5,14 @@ import SummonerContext from '../SummonerContext'
 import MatchView from '../components/MatchView'
 
 
-const Home = () => {
+const Home = () => { 
 
     let nav = useNavigate()
     const { summoner } = useContext(SummonerContext)
 
     return (
-        <div>
-            Home Page
-            <h2>{summoner.name}</h2>
+        <div className="content">
+            <Button style={{background: "white", color: "black"}} >{summoner.name}</Button>
             <MatchView />
             <Button onClick={() => nav('/')} variant="success">Change Summoner</Button>
         </div>

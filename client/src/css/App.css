@@ -1,19 +1,13 @@
-#root, html {
+#root, html, body {
+    position: relative;
     background: #9A8AFF;
-
     text-align: center;
-    align-content: center;
-    vertical-align: middle;
-    padding: 10vw 1vw 30vw;
+    height: 100%
 }
 
-.landing-page {
-    display: flex;
-    flex-direction: column;
-    padding: 0vw 15vw 0vw;
-    align-items: center;
-}
-
-.landing-page > #landing-page-content > button {
-    border: solid black
+.content {
+    position: absolute;
+    top: 25%; left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 3rem
 }
