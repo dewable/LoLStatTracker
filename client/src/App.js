@@ -9,7 +9,7 @@ import SummonerContext from './SummonerContext'
 
 const App = () => {
 
-  const [summoner, setSummoner] = useState({name: '', summonerLevel: ''})
+  const [summoner, setSummoner] = useState({})
 
   return (
     <div className="App">
