@@ -7,4 +7,6 @@ This project follows the MERN tech stack.
 
 This project is also containerized, to start the application you must have `docker-compose`.
 
-`docker-compose up`
+```
+docker-compose up
+```
