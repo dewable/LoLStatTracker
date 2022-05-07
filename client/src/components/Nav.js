@@ -1,7 +1,7 @@
 import { Navbar, Container } from "react-bootstrap"
 
 const Nav = () => {
-    
+
     return (
         <Navbar>
             <Container>

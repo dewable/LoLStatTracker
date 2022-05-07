@@ -6,8 +6,17 @@
 }
 
 .content {
+    display: flex;
+    max-height: 500px;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-between;
     position: absolute;
-    top: 25%; left: 50%;
+    top: 15%; left: 50%;
     transform: translate(-50%,-50%);
-    padding: 3rem
+    padding: 80% 0%
+}
+
+.content > * > * {
+    height: 50px;
 }

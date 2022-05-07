@@ -12,9 +12,9 @@ const Home = () => {
 
     return (
         <div className="content">
-            <Button style={{background: "white", color: "black"}} >{summoner.name}</Button>
-            <MatchView />
-            <Button onClick={() => nav('/')} variant="success">Change Summoner</Button>
+            <span><Button style={{background: "white", color: "black"}} >{summoner.name}</Button></span>
+            <span><MatchView /></span>
+            <span><Button onClick={() => nav('/')} variant="success">Change Summoner</Button></span>
         </div>
     )
 }

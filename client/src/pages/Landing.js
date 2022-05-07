@@ -46,11 +46,9 @@ const LandingPage = () => {
 
     return (
         <div className="content">
-            <div id='landing-page-content' className='item'>
-                {/* This input checks if a summoner name has been entered, and will populate the text area */}
-                <input ref={input} {...(!isEmpty(summoner) ? {defaultValue: summoner.name} :{placeholder: 'Enter Summoner Name'})} type='text'/> <br/>
-                <Button onClick={() => submitSummoner()} variant="success" style={{border: "solid black"}}>Go</Button>
-            </div>
+            {/* This input checks if a summoner name has been entered, and will populate the text area */}
+            <span><input ref={input} {...(!isEmpty(summoner) ? {defaultValue: summoner.name} :{placeholder: 'Enter Summoner Name'})} type='text'/></span> <br/>
+            <span><Button onClick={() => submitSummoner()} variant="success" style={{border: "solid black"}}>Go</Button></span>
         </div>
     )
 }
