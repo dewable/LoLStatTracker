@@ -35,19 +35,22 @@ userRouter.route('/user/:summoner').get( (req, res) =>  {
 userRouter.route('/riot/:puuid/last-match').get( (req, res) => {
     console.log('REQUEST - /riot/:puuid/last-match.')
 
-    const url = `${matchBase}/lol/match/v5/matches/by-puuid/${req.params.puuid}/ids${token}&count=5`
+    const count = 5
+
+    const url = `${matchBase}/lol/match/v5/matches/by-puuid/${req.params.puuid}/ids${token}&count=${count}`
 
     const queryRequest = https.get(url, response => {
         let data = ''
         response.on('data', d => data += d)
         response.on('end', () => {
             data = JSON.parse(data)
-            https.get(`${matchBase}/lol/match/v5/matches/${data[0]}${token}`, response => {
-                let data = ''
-                response.on('data', d => data += d)
-                response.on('end', () => res.status(200).send(data))
-                response.on('error', e => console.log(e))
-            })
+            
+                https.get(`${matchBase}/lol/match/v5/matches/${data[0]}${token}`, response => {
+                    let data = ''
+                    response.on('data', d => data += d)
+                    response.on('end', () => res.status(200).send(data))
+                    response.on('error', e => console.log(e))
+                })
         })
         response.on('error', e => console.log(e))
     }).end()
